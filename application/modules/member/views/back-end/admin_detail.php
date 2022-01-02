@@ -1,0 +1,71 @@
+<?php 
+	$query = $this->common_model->custom_query(" SELECT * FROM `$table` WHERE `$field_key` = $field_id AND `$field_allow` != '3' LIMIT 1 ");
+	if (count($query) > 0) { ?>
+		<div id="order_detail"> <?php
+			$pagination_data = array(
+				'table' 		=> $table, 
+				'field_key' 	=> $field_key, 
+				'field_id' 		=> $field_id,
+				'field_allow'	=> $field_allow
+			);
+			if (uri_seg(4) === 'view') $this->template->load('content/pagination', $pagination_data);
+			/* 
+			 * Load content here 
+			 */
+			?>
+
+
+
+			<div class="mDiv">
+				<div class="ftitle"><?php echo $titles[0]; ?></div>
+			</div>
+			<div class="main-table-box">
+				<div class="form-div"> <?php
+					$M_TName	= array('1' => 'นาง', '2' => 'นางสาว', '3' => 'นาย', '4' => '');
+					$M_Sex 		= array('M' => 'ชาย', 'F' => 'หญิง');
+					foreach ($query as $key => $value) { ?>
+						<div class="form-field-box odd">
+							<div class="form-header-box">ชื่อ-นามสกุล: </div>
+							<div class="form-display-box"><?php echo $M_TName[$value['M_TName']].$value['M_flName']; ?></div>
+						</div>
+						<div class="form-field-box even">
+							<div class="form-header-box">Firstname-lastname: </div>
+							<div class="form-display-box"><?php echo $value['M_ucName']; ?></div>
+						</div>
+						<div class="form-field-box odd">
+							<div class="form-header-box">เพศ: </div>
+							<div class="form-display-box"><?php echo $M_Sex[$value['M_Sex']]; ?></div>
+						</div>
+						<div class="form-field-box even">
+							<div class="form-header-box">เลขประจำตัวประชาชน: </div>
+							<div class="form-display-box"><?php echo $value['M_npID']; ?></div>
+						</div>
+						<div class="form-field-box odd">
+							<div class="form-header-box">โทรศัพท์: </div>
+							<div class="form-display-box"><?php echo $value['M_Tel']; ?></div>
+						</div> 
+						<div class="form-field-box even">
+							<div class="form-header-box">อีเมล: </div>
+							<div class="form-display-box"><a href="mailto:<?php echo $value['M_Email']; ?>"><?php echo $value['M_Email']; ?></a></div>
+						</div> 
+						<div class="form-field-box odd">
+							<div class="form-header-box">ที่อยู่: </div>
+							<div class="form-display-box"><?php echo $value['M_Address']; ?></div>
+						</div> 
+
+						<?php
+					} ?>
+				</div>
+			</div>
+
+
+
+			<?php
+			/* 
+			 * End content here 
+			 */
+			if (uri_seg(4) === 'view') $this->template->load('content/pagination', $pagination_data); ?>
+		</div> <?php
+	}
+	else redirect(uri_seg(1).'/'.uri_seg(2).'/'.uri_seg(3), 'refresh');
+?>

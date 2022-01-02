@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Core
+   ========================================================================== */
+* { @include box-sizing(border-box); }
+
+html {
+    font-family: 'thaisans_nune' ,Arial, sans-serif;
+    font-size: 62.5%;
+    background-color: #F5F5F5;
+ }
+
+body {
+    font-size: 1.8em;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    top: 0px !important;    
+ }
+
+main { flex: 1 0 auto; }
+
+a {
+    color: #000;
+    &:hover, {
+        color: $color-main;
+     }
+    &:active, &:focus {
+      color: #000;
+    }
+ }
+
+.goog-te-banner-frame.skiptranslate { display: none !important; } 
+
+
+.side-menu {
+    font-size: 2rem;
+    margin: 0.5em 0;
+
+    @include clearfix();
+    li {
+        border-bottom: 1px solid #D1D1D1;
+        &:last-child {
+            border-bottom: none;
+         }
+     }
+ }

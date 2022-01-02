@@ -1,0 +1,170 @@
+.hide { display: none; }
+
+// Breadcrumb
+.breadcrumbs {
+    margin: 0.5em 0;
+    li {
+        font-size: 1em;
+     }
+     a {
+     	  color: $color-main;
+     }
+ }
+
+// Pagination
+.pagination {
+    margin: 3.5em 0 2em 0;
+    li {
+        display: inline-block;
+        font-size: 1em;
+     }
+    .current {
+        background-color: $color-main;
+     }
+ }
+
+
+// Table Width
+
+.width-5 {
+	width: 5%;
+}
+
+.width-10 {
+	width: 10%;
+}
+
+.width-15 {
+	width: 15%;
+}
+
+.width-20 {
+	width: 20%;
+}
+
+.width-25 {
+	width: 25%;
+}
+
+.width-30 {
+  width: 30%;
+}
+
+.width-35 {
+  width: 35%;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.width-45 {
+  width: 45%;
+}
+
+.width-50 {
+	width: 50%;
+}
+
+
+
+
+.divider{
+	border: 1px solid $color-main;
+	width: 100px;
+	margin: 2.5em 0 .5em 0;
+}
+.divider-2 {
+	border: 1px solid $color-main;
+	width: 100px;
+	margin: 1em 0 .5em 0;
+}
+.divider-reverse{
+	border: 1px solid $color-main;
+	width: 100px;
+	margin: 2.5em 0 .5em auto;
+}
+
+
+.title-home {
+	text-align: center;
+	padding: 1.111em 0;
+}
+
+.text-title-home {
+	// text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+  color: #333;
+}
+
+.hr-title-1 {	border: 1px solid $color-main; }
+.hr-title-2 {  border: 1px solid $color-main; }
+
+.hr-width-0 { width: 100px; }
+.hr-width-1 { width: 200px; }
+.hr-width-2 { width: 400px; }
+
+
+.text-green { color: $color-main;}
+.text-red { color: $color-red;}
+.text-blue { color: blue;}
+.text-yellow { color: yellow;}
+
+
+.order-badge {
+    display: inline-block;
+    font-size: 1em;
+    width: 75px;
+    margin: 0 auto;
+    padding: .1em;
+    min-width: 2.1em;
+    text-align: center;
+
+    &.success {
+      	color: #FFF;
+      	background-color: #5da423;
+    }
+
+    &.secondary {
+    		color: #000;
+    		background-color: #E9E9E9;
+    }
+
+    &.primary {
+        color: #FFF;
+        background-color: #4078C0;
+    }
+
+    &.alert {
+    		color: #FFF;
+    		background-color: #C60F13;
+    }
+
+    &.warning {
+    		color: #FFF;
+    		background-color: #FFAE00;
+    }
+}
+
+.is-accordion-submenu-parent > a::after {
+  border-color: $color-main transparent transparent !important;
+}
+
+.link {
+  color: $color-main;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.image-center {
+  display: block;
+  max-width: 100%;
+}
+
+.ico-mid {
+  i {
+  vertical-align: middle;
+  }
+}

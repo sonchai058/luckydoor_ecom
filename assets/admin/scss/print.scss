@@ -1,0 +1,155 @@
+@import "config";
+@include font-face("TH Krub", font-files("TH Krub.ttf"));
+
+* {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+html {
+	font-family: "TH Krub";
+	font-size: 20px;
+}
+
+body {
+	background: $main-white;
+}
+
+#order_detail {
+	font-family: "TH Krub";
+	.mDiv {
+		background: lighten($main-gray-light, 25%);
+	    border: 1px solid lighten($main-gray-light, 10%);
+	    border-bottom: 0px;
+	    font-weight: bold;
+	    display: block;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    position: relative;
+	    clear: both;
+		.ftitle {
+			padding: 6px;
+    		white-space: nowrap;
+		}
+	}
+	.main-table-box {	
+		margin-bottom: 30px;	
+		.bDiv {
+			background: $main-white;
+		    overflow: auto;
+		    position: relative;
+			table {
+				width: 100%;
+				border-collapse: collapse;
+    			border-spacing: 0;
+				thead, tfoot {
+					tr.hDiv {
+						background: lighten($main-gray-light, 30%);
+						position: relative;
+    					border: 1px solid lighten($main-gray-light, 10%);
+    					overflow: hidden;
+						th {
+						    border: 1px solid lighten($main-gray-light, 10%);
+						    overflow: hidden;
+						    padding: 0px;
+						    margin: 0px;
+						    font-weight: normal;
+						    vertical-align: middle;
+						    text-align: center;
+						    font-weight: bold;
+						    padding: 5px;
+						    div {
+    							font-weight: bold;
+    							padding: 5px;
+    						}
+							div.text-left {
+								text-align: left;
+							}
+							div.text-center {
+								text-align: center;
+							}
+							div.text-right {
+								text-align: right;
+							}
+						}
+					}
+				}
+				tfoot {
+					tr.hDiv {
+						th {
+							text-align: right;
+						}
+						.text-normal {
+							text-align: left;
+						}
+					}
+				}
+				tbody {
+					tr {
+						td {
+							border-left: 1px solid lighten($main-gray-light, 10%);
+							border-right: 1px solid lighten($main-gray-light, 10%);
+						    vertical-align: top;
+						    white-space: nowrap;
+						    text-align: left;
+						    overflow: hidden;
+						    padding: 0;
+						    font-weight: normal;
+						    padding-bottom: 5px;
+    						padding: 5px;
+							div {
+    							padding-bottom: 5px;
+    							padding: 5px;
+    						}
+							div.text-left {
+								text-align: left;
+							}
+							div.text-center {
+								text-align: center;
+							}
+							div.text-right {
+								text-align: right;
+							}
+						}
+						.text-numeri {
+							text-align: right;
+						}
+					}
+					tr.erow {
+						td {
+							background: lighten($main-gray-light, 35%);
+    					}
+					}
+				}
+			}
+		}
+		.form-div {
+			border: 1px solid lighten($main-gray-light, 10%);
+		    background: $main-white;
+		    position: relative;
+			.form-field-box {
+				padding: 5px 10px;
+	    		margin-bottom: 5px;
+	    		min-height: 32px;
+				.form-header-box {
+					padding-top: 7px;
+					float: left;
+				    width: 200px;
+				    .required {
+				    	color: red;
+				    	font-weight: bold;
+				    }
+				}
+				.form-display-box {
+					padding-top: 7px;
+					float: left;
+				}
+			}
+			.odd {
+				background: $main-white;
+			}
+			.even {
+				background: lighten($main-gray-light, 35%);
+			}
+		}
+	}
+}

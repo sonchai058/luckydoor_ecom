@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+    margin-top: 10vh;
+}   
+.footer-copyright{
+    @include clearfix();
+    background-color: $color-main;
+    text-align: center;
+    h5 {color: #fff;}
+}
+
+.footer-copyright-2{
+    @include clearfix();
+    text-align: center;
+    h5 {color: $color-main;}
+}
+
+.footer-widget{
+    margin: 15px 0;
+    li {
+        margin: .278em 0;
+        a {
+            display: block;
+            color: #333;
+            text-indent: 5px;
+        }
+    }        
+}   
+.partner {
+    margin: 15px 0;
+    @include display-flex;
+    @include flex-wrap(nowrap);
+    @include justify-content(flex-start);
+}
+
+.pay-icon {
+    position: relative;
+    // width: 16.667em;
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include flex-direction(row); 
+    @include justify-content(flex-start);    
+    li {
+        margin: 0 5px;
+    }    
+}
+
+.home-adr {
+    margin: 10px;
+    .adr-1,.adr-2{
+        margin: 10px 0;
+        p {
+            line-height: 1.2;
+        }
+    }
+}

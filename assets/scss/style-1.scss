@@ -1,0 +1,420 @@
+@import 'config';
+
+// ==========================================================================
+// Background Title
+// ==========================================================================
+.wrapper-h2p-title {
+    @extend %wrapper-title;
+    background-image: url('../images/backgrounds/bg-h2p.jpg');
+}
+
+.wrapper-about-title {
+    @extend %wrapper-title;
+    background-image: url('../images/backgrounds/bg-about.jpg');
+}
+
+.wrapper-contact-title {
+    @extend %wrapper-title;
+    background-image: url('../images/backgrounds/bg-contact.jpg');
+}
+
+.wrapper-orderstatus-title {
+    @extend %wrapper-title;
+    background-image: url('../images/backgrounds/bg-orderstatus.jpg');
+}
+
+.wrapper-wishlist-title {
+    @extend %wrapper-title;
+    background-image: url('../images/backgrounds/bg-wishlist.jpg');
+}
+// ==========================================================================
+// Button Style
+// ==========================================================================
+.btn-checkout {
+    @extend %btn;
+    display: block;
+    width: 100%;
+    background-color: $color-main;
+
+    @include transition(all 500ms linear);
+    &:hover {
+        @include text-shadow(1px 1px 1px #000);
+    }
+
+ }
+
+.btn-continue-shop {
+    position: relative;
+    padding-left: 15px;
+    &:before {
+        font-family: 'FontAwesome';
+        position: absolute;
+        left: 0;
+        content: '\f100';
+     }
+ }
+
+ .btn-form-submit {
+    @extend %btn;
+    color: #FFF;
+    background-color: $color-main;
+    float: right;
+
+    @include border-radius(5px);
+}
+
+
+// ==========================================================================
+// Shered Style
+// ==========================================================================
+.categories {
+    @extend %side-menu;
+ }
+
+.categoires-head {
+   @extend %side-menu-head;
+ }
+
+// ==========================================================================
+// Cart
+// ==========================================================================
+.table-cart {
+    line-height: 1;
+    position: relative;
+    @include clearfix();
+
+    thead {
+        background-color: #FFF;
+     }
+
+    tbody {
+        background-color: #F7F7F7;
+        tr:nth-child(even) {
+            background-color: inherit;
+         }
+     }
+
+    tr, td {
+        line-height: 1.7;
+        padding: 10px;
+        vertical-align: top;
+     }
+
+    tr {
+        border-bottom: 10px solid #FFF;
+     }
+
+    input[type='number'] {
+        font-size: 1.8rem;
+        height: 34px;
+     }
+ }
+
+.wishlist {
+    position: absolute;
+    bottom: 0;
+    margin: 5px 0;
+ }
+
+.summary-head {
+    border-bottom: 2px solid $color-main;
+ }
+
+ .row-summary {
+    border: 1px solid #d1d1d1;
+
+    @include border-radius(5px);
+ }
+
+// ==========================================================================
+// Checkout
+// ==========================================================================
+.nav-checkout {
+    position: relative;
+    color: $color-gray;
+    font-size: 1.9rem;
+    li {
+        position: relative;
+        padding: .5em 2em .5em 1em;
+        &:first-child {
+        	padding-left: 0;
+        }
+        &:after {
+            position: absolute;
+            right: 14px;
+            height: 43px;
+            content: '';
+            top: -4px;
+            width: 46px;
+            border: 1px solid $color-gray;
+            border-left: 0;
+            border-bottom: 0;
+
+            @include transform(rotate(45deg));
+         }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+     }
+
+     .active {
+        color: #fff;
+        font-weight: bold;
+        &:before {
+            position: absolute;
+            right: 0;
+            height: 43px;
+            content: '';
+            top: -4px;
+            left: -59px;
+            width: 46px;
+            border: 2px solid #fff;
+            border-left: 0;
+            border-bottom: 0;
+
+            @include transform(rotate(45deg));
+        }
+     }
+ }
+
+.checkout-img-delivery {
+    cursor: pointer;
+    .active {
+        border: 3px solid #5B9C58;
+        color: #5B9C58;
+    }
+}
+
+// ==========================================================================
+// Order Status
+// ==========================================================================
+.order-list {
+    position: relative;
+    margin: 10px 0;
+    li {
+        position: relative;
+        padding: 0 1em;
+        &:before {
+            position: absolute;
+            content: '';
+            border-right: 1px solid #d1d1d1;
+            height: 15px;
+            width: 10px;
+            right: 0;
+            bottom: 3px;
+        }
+        &:last-child {
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+.table-order {
+    margin: 10px 0;
+    td {
+        padding: 15px;
+    }
+    thead {
+        background-color: $color-main;
+        color: #FFF;
+    }
+    tbody , tfoot {
+        background-color: transparent;
+        tr {
+            border: 1px solid #d1d1d1;
+        }
+    }
+}
+
+// ==========================================================================
+// Contact
+// ==========================================================================
+.form-contact {
+    font-size: 1.8rem;
+    @include clearfix();
+    input[type='text'], input[type='email'] {
+        font-size: 1em;
+        height: 34px;
+        padding: 0 0.556em;
+     }
+    textarea {
+        font-size: 1em;
+        padding: 0.278em 0.556em;
+        resize: none;
+     }
+ }
+.contact-map {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 2em 0;
+ }
+
+ .img-contact {
+    margin-top: 15px;
+    padding: 7px 0;
+    border-bottom: 2px solid $color-main;
+ }
+
+// ==========================================================================
+// Howtopay
+// ==========================================================================
+.h2p-list {
+    line-height: 1.5;
+    font-size: 1.1em;
+    margin-left: 1em;
+    i {
+        font-size: 50%;
+    }
+}
+
+// ==========================================================================
+// About Us
+// ==========================================================================
+.about-us {
+    p {
+        font-size: 1.1em;
+        text-indent: 10px;
+        text-align: justify;
+        letter-spacing: .5px;
+        line-height: 1.2;
+    }
+}
+
+.about-desc {
+    width: 540px;
+    h4 {color: #F2F2F0;}
+}
+
+// ==========================================================================
+// Contact Us
+// ==========================================================================
+.help {
+    text-decoration: underline;
+    color: $color-main;
+}
+.contact-desc {
+    width: 400px;
+    h4 {color: #FFF;}
+}
+.form-contact {
+    h5 {
+        line-height: 1.5;
+    }
+    form {
+        margin: 15px 0;
+    }
+}
+
+.checkout-login {
+    text-decoration: underline;
+    color: $color-main;
+}
+
+// ==========================================================================
+// Login
+// ==========================================================================
+.login-wrapper {
+    position: relative;
+    width: 95%;
+    @include clearfix();
+
+    form {
+        margin: .5em 0;
+    }
+   input[type="text"], select {
+    font-size: $form-font-size;
+        height: $form-input-height;
+   }
+   .label-login {
+    font-weight: bold;
+    line-height: 1.5;
+   }
+ }
+
+.login-wrapper-2 {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto
+}
+ .login-logo {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+ }
+
+.form-login {
+    border: 1px solid #d1d1d1;
+    padding: 10px;
+
+    @include border-radius(5px);
+}
+
+
+
+
+// ==========================================================================
+// Other
+// ==========================================================================
+
+.text-bk {
+    color: #333;
+}
+
+.link-help {
+  font-size: 2rem;
+  margin-top: .5em;
+  margin-left: .25em;
+
+
+  a {
+    display: block;
+    margin: 5px 0;
+    i {
+      vertical-align: middle;
+    }
+  }
+}
+
+.text-title {
+  margin: 12px 0;
+}
+
+.transport-wrapper {
+  > p {
+    margin-left: 25px;
+  }
+  i {
+    vertical-align: middle;
+  }
+}
+
+.service-ol {
+  list-style-type: decimal;
+  margin-left: 40px;
+}
+
+.service-ol-2 {
+  list-style-type: disc;
+  margin-left: 50px;
+}
+
+.ol-storelist {
+  li {
+    margin: 10px 0;
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.img-middle {
+    vertical-align: middle;
+    margin-right: 5px;
+}

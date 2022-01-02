@@ -1,0 +1,87 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+@mixin font-size ($fontsize) {
+    font-size: $fontsize + px; /* IE */
+    font-size: ($fontsize / 10) + rem;
+}
+
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}
+
+
+@mixin hvr-outline-out ($border-color){
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  @include transform(translateZ(0));
+  @include box-shadow(0 0 1px rgba(0,3,51,.8));
+  @include backface-visibility(hidden);
+
+	&:before {
+		content: '';
+		position: absolute;
+		border: $border-color solid 2px;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		@include transition-duration(.3s);
+		@include transition-property(top, right, bottom, left);
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		&:before {
+			top: -8px;
+			right: -8px;
+			bottom: -8px;
+			left: -8px;
+		}
+	}
+}
+
+
+@mixin hvr-rectangle-out () {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #E1E1E1;
+
+    @include transition-duration(0.7s);
+    @include transition-property(color);
+    @include backface-visibility(hidden);
+    @include box-shadow(0 0 1px rgba(0,0,0,0));
+    @include transform(translateZ(0));
+    &:before {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        background-color: #2098D1;
+
+        @include transition-timing-function(ease-out);
+        @include transition-duration(0.7s);
+        @include transition-property(transform);
+        @include transform(scale(0));
+     }
+    &:hover, &:focus, &:active {
+        color: #FFF;
+        &:before {
+            @include transform(scale(1));
+         }
+     }
+ }
+
+
+
+

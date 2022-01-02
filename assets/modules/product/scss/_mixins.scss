@@ -1,0 +1,34 @@
+@import "./mixins/common";
+
+// Clearfix
+@mixin clearfix {
+  	&:before {
+    	display: table;
+    	content: "";
+  	}
+
+  	&:after {
+    	display: table;
+    	clear: both;
+    	content: "";
+  	}
+}
+
+// Linear gradient background from top to bottom
+@mixin gradient($start: #fafafa, $end: #eaeaea) {
+  	@warn "Gradient mixin is deprecated.";
+  	background-color: $end;
+  	// FF 3.6+
+  	background-image: -moz-linear-gradient($start, $end);
+  	// Safari 5.1+, Chrome 10+
+  	background-image: -webkit-linear-gradient($start, $end);
+  	background-image: linear-gradient($start, $end);
+  	background-repeat: repeat-x;
+}
+
+// Text hiding for image based text replacement
+@mixin hide-text() {
+  	overflow: hidden;
+  	text-indent: 100%;
+  	white-space: nowrap;
+}

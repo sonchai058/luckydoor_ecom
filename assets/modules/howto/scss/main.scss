@@ -1,0 +1,68 @@
+@import "config";
+
+#navbar-custom {
+	background-color: $theme-main;
+	.container {
+		.navbar-header {
+			button {
+				border-color: $theme-main;
+				span {
+					background-color: $brand-white;
+				}
+			}
+			button:hover, button:focus, button:active {
+				background-color: $theme-main;
+			}
+			.navbar-brand {
+				color: $brand-white;
+				&:hover { 
+					color: $brand-gray-dark; 
+				}
+			}
+			.navbar-brand-custom-icon { 
+				padding: 5px 15px; 
+			}
+		}
+		.navbar-collapse, .collapse {
+			form {
+				border-color: $theme-main;
+				.input-group {
+					.input-group-btn { 
+						button { 
+							background-color: $brand-gray-dark; 
+							border-color: $brand-gray-dark; 
+							span {
+								color: $brand-white;
+							}
+						} 
+						button:hover { 
+							background-color: lighten($brand-gray-dark, 10%);  
+							border-color: lighten($brand-gray-dark, 10%); 
+						}
+					}
+				}
+			}
+			.nav, .navbar-nav, .navbar-right {
+				li {
+					a { 
+						color: $brand-white; 
+					}
+					a:hover { 
+						color: $brand-gray-dark; 
+					}
+				}
+			}
+		}
+	}
+}
+
+#breadcrumb-custom { 
+	margin-top: 50px; 
+}
+
+#footer-custom {
+	.container-fluid {
+		min-height: 50px;
+		background-color: $theme-main;
+	}
+}

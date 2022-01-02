@@ -1,0 +1,5 @@
+.button {
+	&:hover {
+		background-color: lighten($color-main,5%);
+	}
+}

@@ -1,0 +1,63 @@
+// Shared Style
+%btn {
+    font-size: 2rem;
+    padding: 0.35em 0.5em;
+ }
+
+ %hr {
+ 	border: 1px solid $color-main;
+ }
+
+ %wrapper-title {
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+    color: #FFF;
+
+    background-position: center;
+    @include background-size(cover);
+    @include text-shadow(0 1px 1px #000);
+    h1,h2 {
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: #FFF;
+    }
+    h4,h5 {
+        color: #FFF;
+    }
+}
+
+
+%side-menu {
+    font-size: 2rem;
+    margin: 0.5em 0;
+    @include clearfix();
+    li {
+        // border-bottom: 1px solid #D1D1D1;
+        &:last-child {
+            border-bottom: none;
+         }
+         .active {
+           color: $color-main;
+         }
+        &:not(.sub-menu) {
+        border-bottom: 1px solid #D1D1D1;
+     }
+     }
+
+ }
+
+%side-menu-head {
+    padding: 0.111em 0.556em;
+    background-color: $color-main;
+    > * {
+        color: #FFF;
+     }
+ }
+ 
+%btn-product {
+    padding: 10px;
+   color: #333;   
+   font-size: 1.5rem;
+   width: 48%; 
+}
